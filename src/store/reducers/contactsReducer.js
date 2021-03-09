@@ -5,7 +5,7 @@ const initialState = {
 const contactsReducer = (state = initialState, action) => {
   switch (action.type) {
     case "GET_CONTACTS":
-      break;
+      return { ...state, contacts: action.payload };
 
     default:
       return state;

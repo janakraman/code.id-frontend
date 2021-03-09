@@ -10,7 +10,7 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <label for="menu-toggle" className="cursor-pointer lg:hidden block">
+      <label htmlFor="menu-toggle" className="cursor-pointer lg:hidden block">
         <svg
           className="fill-current text-gray-900"
           xmlns="http://www.w3.org/2000/svg"
@@ -33,35 +33,11 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-900"
               >
                 Add Contact
               </Link>
             </li>
-            {/* <li>
-              <Link
-                to="/"
-                className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
-              >
-                Pricing
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/"
-                className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
-              >
-                Documentation
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/"
-                className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2"
-              >
-                Support
-              </Link>
-            </li> */}
           </ul>
         </nav>
         {/* <Link
