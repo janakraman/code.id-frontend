@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { deleteContact } from "../store/actions/contactsAction";
+import { useDispatch } from "react-redux";
 
 const ContactCard = ({ contact }) => {
   const [image, setImage] = useState("");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setImage(contact.photo);
-  }, []);
+  }, [contact.photo]);
+
+  const handleDelete = () => {
+    dispatch(deleteContact(contact.id))
+  };
 
   return (
     <div className="bg-gray-900 shadow-lg rounded p-3">
@@ -37,7 +44,7 @@ const ContactCard = ({ contact }) => {
             </button>
           </Link>
 
-          <button className="hover:scale-110 text-white opacity-0 transform translate-y-0 group-hover:translate-y-0 group-hover:opacity-100 transition">
+          <button onClick={handleDelete} className="hover:scale-110 text-white opacity-0 transform translate-y-0 group-hover:translate-y-0 group-hover:opacity-100 transition">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

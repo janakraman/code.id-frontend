@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from '../assets/code-colored.webp'
+import logo from "../assets/code-colored.webp";
 
 const Navbar = () => {
   return (
@@ -32,24 +32,16 @@ const Navbar = () => {
           <ul className="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0">
             <li>
               <Link
-                to="/"
-                className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-gray-900"
+                to="/add"
+                className="lg:p-4 py-3 font-bold px-0 block border-b-2 border-transparent hover:border-gray-900"
               >
-                Add Contact
+                <div className="flex flex-row">
+                  <span>Add Contact</span>
+                </div>
               </Link>
             </li>
           </ul>
         </nav>
-        {/* <Link
-          to="/"
-          className="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 cursor-pointer"
-        >
-          <img
-            className="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400"
-            src="https://pbs.twimg.com/profile_images/1128143121475342337/e8tkhRaz_normal.jpg"
-            alt="Andy Leverenz"
-          />
-        </Link> */}
       </div>
     </header>
   );
