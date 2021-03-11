@@ -76,6 +76,7 @@ const Contact = () => {
                 )
               }
               alt="profile"
+              data-testid="profileImage"
             />
           </div>
 

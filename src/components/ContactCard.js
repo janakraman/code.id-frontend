@@ -8,11 +8,11 @@ const ContactCard = ({ contact }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setImage(contact.photo);
-  }, [contact.photo]);
+    setImage(contact?.photo);
+  }, [contact?.photo]);
 
   const handleDelete = () => {
-    dispatch(deleteContact(contact.id))
+    dispatch(deleteContact(contact?.id));
   };
 
   return (
@@ -27,10 +27,14 @@ const ContactCard = ({ contact }) => {
           }
           src={image}
           alt=""
+          data-testid="contactImage"
         />
         <div className="absolute bg-black rounded bg-opacity-0 group-hover:bg-opacity-60 w-full h-full top-0 flex items-center group-hover:opacity-100 transition justify-evenly">
-          <Link to={`/contacts/${contact.id}`}>
-            <button className="hover:scale-110 text-white opacity-0 transform translate-y-0 group-hover:translate-y-0 group-hover:opacity-100 transition">
+          <Link to={`/contacts/${contact?.id}`}>
+            <button
+              className="hover:scale-110 text-white opacity-0 transform translate-y-0 group-hover:translate-y-0 group-hover:opacity-100 transition"
+              data-testid="detailsButton"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -44,7 +48,11 @@ const ContactCard = ({ contact }) => {
             </button>
           </Link>
 
-          <button onClick={handleDelete} className="hover:scale-110 text-white opacity-0 transform translate-y-0 group-hover:translate-y-0 group-hover:opacity-100 transition">
+          <button
+            className="hover:scale-110 text-white opacity-0 transform translate-y-0 group-hover:translate-y-0 group-hover:opacity-100 transition"
+            onClick={handleDelete}
+            data-testid="deleteButton"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -60,8 +68,8 @@ const ContactCard = ({ contact }) => {
         </div>
       </div>
       <div className="p-5">
-        <h3 className="text-white text-lg">{`${contact.firstName} ${contact.lastName}`}</h3>
-        <p className="text-gray-400">{contact.age}</p>
+        <h3 className="text-white text-lg" data-testid="fullName">{`${contact?.firstName} ${contact?.lastName}`}</h3>
+        <p className="text-gray-400" data-testid="age">{contact?.age}</p>
       </div>
     </div>
   );
